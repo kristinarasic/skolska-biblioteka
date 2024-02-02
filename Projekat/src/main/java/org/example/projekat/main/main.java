@@ -12,10 +12,9 @@ public class main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Creating an instance of the login class
         login login = new login();
 
-        // Calling the start method of the login class
+
         try {
             login.start(primaryStage);
         } catch (Exception e) {

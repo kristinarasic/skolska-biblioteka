@@ -106,7 +106,6 @@ public class addMember extends Application {
         });
         Image backgroundImage = new Image("file:src/main/java/org/example/projekat/img/books.jpg");
 
-        // Create a background image
         BackgroundImage background = new BackgroundImage(
                 backgroundImage,
                 BackgroundRepeat.NO_REPEAT,

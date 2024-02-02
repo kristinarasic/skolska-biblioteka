@@ -61,7 +61,6 @@ public class releseHoldMethod {
         } else {
             String[] values = selectedValue1.split("-");
 
-            // Extract values from the selected combo box item
             String bookTitle = values[3].trim();
             String bookAuthor = values[4].trim();
             String bookISBN = values[5].trim();
@@ -70,17 +69,14 @@ public class releseHoldMethod {
 
 
             try {
-                // Start a transaction
                 con.setAutoCommit(false);
 
-                // Delete from borrowed
                 String deleteQuery = "DELETE FROM borrowed WHERE borowedID = ?";
                 try (PreparedStatement deleteStatement = con.prepareStatement(deleteQuery)) {
                     deleteStatement.setString(1, borowedID);
                     int rowsDeleted = deleteStatement.executeUpdate();
 
                     if (rowsDeleted > 0) {
-                        // Insert into bookcopy
                         String insertQuery = "INSERT INTO bookcopy (ISBN) VALUES (?)";
                         try (PreparedStatement insertStatement = con.prepareStatement(insertQuery)) {
                             insertStatement.setString(1, bookISBN);
@@ -88,28 +84,23 @@ public class releseHoldMethod {
                             int rowsInserted = insertStatement.executeUpdate();
 
                             if (rowsInserted > 0) {
-                                // Commit the transaction
                                 con.commit();
                                 book.setMemberIndex(memberIndex);
                                 Alert m = new Alert(Alert.AlertType.INFORMATION, "Book successfuly relesed!!", ButtonType.CLOSE);
                                 m.showAndWait();
                             } else {
-                                // Rollback the transaction
                                 con.rollback();
                                 System.out.println("Failed to insert into bookcopy.");
                             }
                         }
                     } else {
-                        // Rollback the transaction
                         con.rollback();
                         System.out.println("Failed to delete from borrowed.");
                     }
                 } catch (SQLException e) {
-                    // Rollback the transaction on any exception
                     con.rollback();
                     throw e;
                 } finally {
-                    // Restore auto-commit mode
                     con.setAutoCommit(true);
                 }
 

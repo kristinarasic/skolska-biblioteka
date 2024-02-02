@@ -55,7 +55,6 @@ public class IssuedBookList extends Application {
         button.setStyle("-fx-padding: 15");
         button.setAlignment(Pos.CENTER);
 
-        // Create a background image
         BackgroundImage background = new BackgroundImage(
                 backgroundImage,
                 BackgroundRepeat.NO_REPEAT,

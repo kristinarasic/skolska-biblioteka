@@ -34,17 +34,14 @@ public class IssuedBookListMethod {
             String title = resultSet.getString("book.title");
             String author = resultSet.getString("book.author");
 
-            // Build a string with book details
             String bookDetail = String.format("Name: %s\nLastname: %s\nGrade: %d\nTitle: %s\nAuthor: %s\n",
                     name, lastname, grade, title, author);
 
             bookDetails.add(bookDetail);
         }
 
-        // Set the items in the ListView
         listView.setItems(bookDetails);
 
-        // Close resources
         resultSet.close();
         statement.close();
 

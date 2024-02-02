@@ -28,7 +28,7 @@ public class loginMethods {
             user.setPassword(set.getString("password"));
             if (username.equals(set.getString("username")) && password.equals(set.getString("password"))) {
                 pass = true;
-                break; // Exit the loop since we found a match
+                break;
             }
 
 

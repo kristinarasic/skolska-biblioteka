@@ -32,17 +32,14 @@ public class BookListMethod {
             String numberOfCopies = resultSet.getString("numberOfCopies");
             String rating = resultSet.getString("rating");
 
-            // Build a string with book details
             String bookDetail = String.format("Title: %s\nAuthor: %s\nISBN: %s\npublishYear: %s\nnumberOfCopies: %s\nrating: %s\n",
                     title, author, ISBN, publishYear, numberOfCopies, rating);
 
             bookDetails.add(bookDetail);
         }
 
-        // Set the items in the ListView
         listView.setItems(bookDetails);
 
-        // Close resources
         resultSet.close();
         statement.close();
 

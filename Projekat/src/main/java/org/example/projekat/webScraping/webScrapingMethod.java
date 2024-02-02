@@ -33,18 +33,14 @@ public class webScrapingMethod {
         for (Element titleElement : titleElements) {
             String title = titleElement.text();
             Array1[i] = title;
-            //System.out.println("Title: " + title);
             i++;
         }
         i = 0;
-        // Selecting ratings
         Elements ratingElements = document.select("span.minirating");
         for (Element ratingElement : ratingElements) {
             String rating = ratingElement.text();
             Array2[i] = rating;
             i ++;
-//            System.out.println("Rating: " + rating);
-//            System.out.println("-----------------------------");
         }
         for(int j = 0; j < 250; j++){
             books.put(Array1[j], Array2[j]);
