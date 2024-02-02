@@ -62,7 +62,7 @@ public class webScraping extends Application {
 
         ListView<String> listView = new ListView<>(bookList);
 
-        Image backgroundImage = new Image("file:C:\\Users\\Tina\\Desktop\\books.jpg");
+        Image backgroundImage = new Image("file:src/main/java/org/example/projekat/img/books.jpg");
         HBox button = new HBox(back);
         button.setStyle("-fx-font-size: 23");
         button.setStyle("-fx-padding: 15");

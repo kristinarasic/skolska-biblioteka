@@ -104,7 +104,7 @@ public class addMember extends Application {
             menu page = new menu();
             page.start(stage);
         });
-        Image backgroundImage = new Image("file:C:\\Users\\Tina\\Desktop\\books.jpg");
+        Image backgroundImage = new Image("file:src/main/java/org/example/projekat/img/books.jpg");
 
         // Create a background image
         BackgroundImage background = new BackgroundImage(

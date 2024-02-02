@@ -67,7 +67,7 @@ public class IssueBook extends Application {
             }
 
         });
-        Image backgroundImage = new Image("file:C:\\Users\\Tina\\Desktop\\books.jpg");
+        Image backgroundImage = new Image("file:src/main/java/org/example/projekat/img/books.jpg");
         VBox button = new VBox(issueBook,back);
         button.setStyle("-fx-font-size: 18; -fx-padding: 135");
         button.setSpacing(20);

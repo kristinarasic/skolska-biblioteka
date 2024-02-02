@@ -36,7 +36,7 @@ public class menu extends Application {
         Button releseHold = new Button("Relese hold");
         Button goodreadsTop250 = new Button("goodreads top 250 books");
         Button logout = new Button("Log out!");
-        Image backgroundImage = new Image("file:C:\\Users\\Tina\\Desktop\\books.jpg");
+        Image backgroundImage = new Image("file:src/main/java/org/example/projekat/img/books.jpg");
 
         // Create a background image
         BackgroundImage background = new BackgroundImage(
